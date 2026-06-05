@@ -1,0 +1,13 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block Altamiran %}
+
+<div class="contenedorregistro">
+    <img src="{% static 'src/magic-threads.png' %}" alt="">
+    <form action="" method="post">
+        {{Formulario}}
+        <input type="submit" value="Registrar">
+    </form>
+</div>
+{% endblock %}

@@ -1,11 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+{% load static %}
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SDFSDF</title>
+  <title>Mojo Jojo — El Villano Supremo de Saltadilla</title>
+  <meta name="description" content="Galería dedicada a Mojo Jojo, el simio genio malvado enemigo de las Chicas Superpoderosas.">
+  
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-  
+
+  <header>
+    <div class="header-inner">
+      <div>
+        <span class="badge">Villano #1</span>
+        <h1>MOJO <span>JOJO</span></h1>
+        <p class="lead">
+          El simio super-genio, archienemigo de las Chicas Superpoderosas
+          y autoproclamado conquistador de Saltadilla. ¡Porque sí, porque
+          así es, porque es Mojo Jojo!
+        </p>
+        <div class="btn-group">
+          <a href="{% url 'Registro' %}" class="btn btn-primary">Productos</a>
+          <a href="#bio" class="btn btn-secondary">Biografía</a>
+        </div>
+      </div>
+      <div class="hero-img-wrap">
+        <img src="{% static 'src/hero-wheel.png' %}" alt="Mojo Jojo con su capa púrpura" class="hero-img" width="1024" height="1024">
+      </div>
+    </div>
+  </header>
+ {% block Altamiran %}
+  <section id="bio">
+    <h2>¿Quién es Mojo Jojo?</h2>
+    <p class="bio-text">
+      Antes conocido simplemente como Jojo, era el chimpancé de laboratorio
+      del Profesor Utonio. Tras la explosión de la Sustancia X, su cerebro
+      creció hasta proporciones colosales, convirtiéndolo en el villano más
+      icónico de Saltadilla.
+    </p>
+  </section>
+
+  <section id="galeria">
+    <h2>Galería del Mal</h2>
+    <div class="gallery-grid">
+      <article class="card">
+        <div class="card-img-wrap">
+          <img src="{% static 'src/magic-threads.png' %}" alt="En su Guarida" class="card-img" loading="lazy" width="1024" height="1024">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">En su Guarida</h3>
+          <p class="card-desc">Maquinando desde el observatorio sobre Saltadilla.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-img-wrap">
+          <img src="{% static 'src/warrior.png' %}" alt="Robot Gigante" class="card-img" loading="lazy" width="1024" height="1024">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Robot Gigante</h3>
+          <p class="card-desc">Pilotando una de sus máquinas de destrucción.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-img-wrap">
+          <img src="{% static 'src/wheel-symbol.png' %}" alt="El Cerebro Maligno" class="card-img" loading="lazy" width="1024" height="1024">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">El Cerebro Maligno</h3>
+          <p class="card-desc">Primer plano de su cerebro hiperdesarrollado.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  {% endblock %}
+
+  <footer>
+    Fan page tributo · Mojo Jojo es propiedad de Cartoon Network
+  </footer>
+
+
+ header.encabezado>img+nav.menu>a*4 + Enter
+
+
+
+
+
+
+
 </body>
 </html>
+6
