@@ -12,4 +12,13 @@ def Registro(request):
     data={
         'Formulario':FormularioRegistro()
     }
+    # --->Si el metodo de HTML es post
+    if request.method=="POST":
+        # --> Guarda lo que registro a la Base de DATOS
+        query=FormularioRegistro(data=request.POST,files=request.FILES)
+        if query.is_valid():
+            query.save()
+            data["Mensaje"]="Datos Registrados"
+        else:
+            data['Mensaje']="No se pudo Registrar"
     return render(request,'Pages/Registro.html',data)
