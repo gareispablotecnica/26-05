@@ -4,9 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mojo Jojo — El Villano Supremo de Saltadilla</title>
-  <meta name="description" content="Galería dedicada a Mojo Jojo, el simio genio malvado enemigo de las Chicas Superpoderosas.">
-  
+  <title>La Selección Argentina — Campeones del Mundo</title>
+  <meta name="description" content="Página dedicada a la Selección Argentina de Fútbol, tricampeona del mundo y orgullo nacional.">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
@@ -14,64 +13,65 @@
   <header>
     <div class="header-inner">
       <div>
-        <span class="badge">Villano #1</span>
-        <h1>MOJO <span>JOJO</span></h1>
+        <span class="badge">Campeones del Mundo</span>
+        <h1>SELECCIÓN <span>ARGENTINA</span></h1>
         <p class="lead">
-          El simio super-genio, archienemigo de las Chicas Superpoderosas
-          y autoproclamado conquistador de Saltadilla. ¡Porque sí, porque
-          así es, porque es Mojo Jojo!
+          La Albiceleste, tricampeona mundial y orgullo de todo un país.
+          Garra, talento y pasión que conquistaron el mundo en Qatar 2022.
+          ¡Vamos Argentina!
         </p>
         <div class="btn-group">
           <a href="{% url 'Registro' %}" class="btn btn-primary">Productos</a>
-          <a href="#bio" class="btn btn-secondary">Biografía</a>
+          <a href="#bio" class="btn btn-secondary">Historia</a>
         </div>
       </div>
       <div class="hero-img-wrap">
-        <img src="{% static 'src/hero-wheel.png' %}" alt="Mojo Jojo con su capa púrpura" class="hero-img" width="1024" height="1024">
+        <img src="{% static 'src/hero-seleccion.png' %}" alt="Jugador de la Selección Argentina celebrando" class="hero-img" width="1024" height="1024">
       </div>
     </div>
   </header>
- {% block Altamiran %}
+
+  {% block Altamiran %}
   <section id="bio">
-    <h2>¿Quién es Mojo Jojo?</h2>
+    <h2>¿Quién es la Selección Argentina?</h2>
     <p class="bio-text">
-      Antes conocido simplemente como Jojo, era el chimpancé de laboratorio
-      del Profesor Utonio. Tras la explosión de la Sustancia X, su cerebro
-      creció hasta proporciones colosales, convirtiéndolo en el villano más
-      icónico de Saltadilla.
+      La Selección Nacional de Fútbol de Argentina, conocida como "La Albiceleste",
+      representa al país desde 1901. Con tres Copas del Mundo (1978, 1986 y 2022),
+      quince Copas América y un Mundial Sub-20 a cuestas, es una de las selecciones
+      más laureadas del planeta y un símbolo de la identidad argentina.
     </p>
   </section>
 
   <section id="galeria">
-    <h2>Galería del Mal</h2>
+    <h2>Galería Albiceleste</h2>
     <div class="gallery-grid">
       <article class="card">
         <div class="card-img-wrap">
-          <img src="{% static 'src/magic-threads.png' %}" alt="En su Guarida" class="card-img" loading="lazy" width="1024" height="1024">
+          <img src="{% static 'src/vestuario.png' %}" alt="En el Vestuario" class="card-img" loading="lazy" width="1024" height="1024">
         </div>
         <div class="card-body">
-          <h3 class="card-title">En su Guarida</h3>
-          <p class="card-desc">Maquinando desde el observatorio sobre Saltadilla.</p>
+          <h3 class="card-title">En el Vestuario</h3>
+          <p class="card-desc">Las camisetas listas antes de salir a la cancha.</p>
         </div>
       </article>
 
       <article class="card">
         <div class="card-img-wrap">
-          <img src="{% static 'src/warrior.png' %}" alt="Robot Gigante" class="card-img" loading="lazy" width="1024" height="1024">
+          <img src="{% static 'src/cancha.png' %}" alt="En la Cancha" class="card-img" loading="lazy" width="1024" height="1024">
         </div>
         <div class="card-body">
-          <h3 class="card-title">Robot Gigante</h3>
-          <p class="card-desc">Pilotando una de sus máquinas de destrucción.</p>
+          <h3 class="card-title">En la Cancha</h3>
+          <p class="card-desc">La Albiceleste dejando todo sobre el césped.</p>
         </div>
       </article>
 
       <article class="card">
         <div class="card-img-wrap">
-          <img src="{% static 'src/wheel-symbol.png' %}" alt="El Cerebro Maligno" class="card-img" loading="lazy" width="1024" height="1024">
+          <img src="{% static 'src/copa.png' %}" alt="La Copa del Mundo" class="card-img" loading="lazy" width="1024" height="1024">
         </div>
         <div class="card-body">
-          <h3 class="card-title">El Cerebro Maligno</h3>
-          <p class="card-desc">Primer plano de su cerebro hiperdesarrollado.</p>
+          <h3 class="card-title">La Copa del Mundo</h3>
+          <p class="card-desc">El trofeo más codiciado, de regreso a casa.</p>
         </div>
       </article>
     </div>
@@ -79,18 +79,8 @@
   {% endblock %}
 
   <footer>
-    Fan page tributo · Mojo Jojo es propiedad de Cartoon Network
+    Fan page tributo · La Selección Argentina es propiedad de la AFA
   </footer>
-
-
- header.encabezado>img+nav.menu>a*4 + Enter
-
-
-
-
-
-
 
 </body>
 </html>
-6

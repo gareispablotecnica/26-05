@@ -1,375 +1,542 @@
+/* ======================================== SELECCIÓN ARGENTINA — ESTILOS ======================================== */
+/* Tokens de color */
 :root {
-  --bg: #0f1020;
-  --fg: #f3f0ff;
-  --card: #1a1b36;
-  --muted-fg: #a8a3c8;
-  --primary: #7ce85a;
-  --primary-fg: #0f1020;
-  --secondary: #8e3eb5;
-  --border: #2a2b4f;
-  --gradient-villain: linear-gradient(135deg, #8e3eb5, #7ce85a);
-  --shadow-villain: 0 20px 60px -10px rgba(142, 62, 181, 0.5);
+  --celeste: #6CABDD;
+  --celeste-oscuro: #4A90C6;
+  --azul-noche: #0B1F3A;
+  --blanco: #FFFFFF;
+  --dorado: #D4AF37;
+  --dorado-claro: #F2D56E;
+  --gris-suave: #F4F6F8;
+  --gris-texto: #4A5568;
+  --sombra: rgba(11, 31, 58, 0.12);
+  --sombra-fuerte: rgba(11, 31, 58, 0.25);
 }
 
-* {
+/* Reset y base */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: var(--bg);
-  color: var(--fg);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--blanco);
+  color: var(--azul-noche);
   line-height: 1.6;
 }
 
+/* ======================================== HEADER / HERO ======================================== */
 header {
+  background: linear-gradient(135deg, var(--celeste) 0%, var(--celeste-oscuro) 100%);
+  color: var(--blanco);
+  padding: 4rem 1.5rem 5rem;
   position: relative;
   overflow: hidden;
 }
 
-header::before {
-  content: '';
+header::after {
+  content: "";
   position: absolute;
-  inset: 0;
-  opacity: 0.3;
-  background: var(--gradient-villain);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--blanco);
+  clip-path: ellipse(60% 100% at 50% 100%);
 }
 
 .header-inner {
-  position: relative;
-  max-width: 1152px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 80px 24px;
-  display: grid;
-  gap: 40px;
+  display: flex;
   align-items: center;
-}
-
-@media (min-width: 768px) {
-  .header-inner {
-    grid-template-columns: 1fr 1fr;
-    padding: 112px 24px;
-  }
+  gap: 3rem;
+  position: relative;
+  z-index: 1;
 }
 
 .badge {
   display: inline-block;
-  background: var(--secondary);
-  color: var(--fg);
-  padding: 4px 16px;
-  border-radius: 9999px;
-  font-size: 0.875rem;
+  background: var(--dorado);
+  color: var(--azul-noche);
+  font-size: 0.75rem;
   font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 16px;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.35);
 }
 
-h1 {
-  font-size: 3rem;
+header h1 {
+  font-size: 3.2rem;
   font-weight: 900;
-  line-height: 1;
+  line-height: 1.05;
   letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
-h1 span {
-  color: var(--primary);
+header h1 span {
+  display: block;
+  color: var(--dorado-claro);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-@media (min-width: 768px) {
-  h1 {
-    font-size: 4.5rem;
-  }
+.lead {
+  font-size: 1.15rem;
+  max-width: 460px;
+  opacity: 0.95;
+  margin-bottom: 1.8rem;
+  line-height: 1.55;
 }
 
-p.lead {
-  margin-top: 24px;
-  font-size: 1.125rem;
-  color: var(--muted-fg);
-  max-width: 420px;
-}
-
+/* Botones */
 .btn-group {
-  margin-top: 32px;
   display: flex;
-  gap: 16px;
+  gap: 0.85rem;
   flex-wrap: wrap;
 }
 
 .btn {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 0.6rem;
   text-decoration: none;
-  transition: transform 0.2s, background 0.2s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
 }
 
 .btn-primary {
-  background: var(--primary);
-  color: var(--primary-fg);
-  box-shadow: var(--shadow-villain);
+  background: var(--azul-noche);
+  color: var(--blanco);
+  box-shadow: 0 4px 14px var(--sombra-fuerte);
 }
 
 .btn-primary:hover {
-  transform: scale(1.05);
+  background: #0a1a30;
+  box-shadow: 0 6px 20px var(--sombra-fuerte);
 }
 
 .btn-secondary {
-  border: 1px solid var(--border);
-  color: var(--fg);
-  background: transparent;
+  background: var(--blanco);
+  color: var(--azul-noche);
+  box-shadow: 0 2px 8px var(--sombra);
 }
 
 .btn-secondary:hover {
-  background: var(--card);
+  background: var(--gris-suave);
+  box-shadow: 0 4px 12px var(--sombra);
 }
 
+/* Hero imagen */
 .hero-img-wrap {
-  position: relative;
-}
-
-.hero-img-wrap::before {
-  content: '';
-  position: absolute;
-  inset: -16px;
-  border-radius: 24px;
-  background: var(--gradient-villain);
-  filter: blur(48px);
-  opacity: 0.5;
+  flex-shrink: 0;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 20px 60px rgba(11, 31, 58, 0.25);
+  background: var(--blanco);
 }
 
 .hero-img {
-  position: relative;
   width: 100%;
-  border-radius: 16px;
-  border: 4px solid var(--primary);
-  box-shadow: var(--shadow-villain);
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
-section {
-  max-width: 1152px;
+/* ======================================== BIO ======================================== */
+#bio {
+  max-width: 780px;
   margin: 0 auto;
-  padding: 64px 24px;
+  padding: 3.5rem 1.5rem;
+  text-align: center;
 }
 
-h2 {
+#bio h2 {
   font-size: 2rem;
-  font-weight: 900;
-  margin-bottom: 16px;
+  font-weight: 800;
+  color: var(--azul-noche);
+  margin-bottom: 1.2rem;
+  position: relative;
+  display: inline-block;
 }
 
-@media (min-width: 768px) {
-  h2 {
-    font-size: 2.25rem;
-  }
+#bio h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: var(--celeste);
+  border-radius: 2px;
+  margin: 0.5rem auto 0;
 }
 
 .bio-text {
-  font-size: 1.125rem;
-  color: var(--muted-fg);
-  max-width: 768px;
+  font-size: 1.05rem;
+  color: var(--gris-texto);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ======================================== GALERÍA ======================================== */
+#galeria {
+  background: var(--gris-suave);
+  padding: 4rem 1.5rem 5rem;
+}
+
+#galeria h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--azul-noche);
+  margin-bottom: 2.5rem;
+}
+
+#galeria h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: var(--celeste);
+  border-radius: 2px;
+  margin: 0.5rem auto 0;
 }
 
 .gallery-grid {
+  max-width: 1100px;
+  margin: 0 auto;
   display: grid;
-  gap: 32px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
 }
 
-@media (min-width: 640px) {
+/* Tarjetas */
+.card {
+  background: var(--blanco);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 24px var(--sombra);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px var(--sombra-fuerte);
+}
+
+.card-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #e8eef3;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .card-img {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 1.3rem 1.2rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--azul-noche);
+  margin-bottom: 0.4rem;
+}
+
+.card-desc {
+  font-size: 0.92rem;
+  color: var(--gris-texto);
+  line-height: 1.5;
+}
+
+/* ======================================== FOOTER ======================================== */
+footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: var(--azul-noche);
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+}
+
+/* ======================================== RESPONSIVE ======================================== */
+@media (max-width: 900px) {
+  .header-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .hero-img-wrap {
+    width: 260px;
+    height: 260px;
+  }
+
+  header h1 {
+    font-size: 2.4rem;
+  }
+
+  .lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-group {
+    justify-content: center;
+  }
+
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 560px) {
+  header {
+    padding: 3rem 1.2rem 4rem;
+  }
+
+  header h1 {
+    font-size: 1.9rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .hero-img-wrap {
+    width: 200px;
+    height: 200px;
+  }
+
   .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  #galeria {
+    padding: 3rem 1.2rem 4rem;
   }
 }
 
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  overflow: hidden;
-  transition: transform 0.3s;
-  box-shadow: var(--shadow-villain);
-}
-
-.card:hover {
-  transform: translateY(-8px);
-}
-
-.card-img-wrap {
-  overflow: hidden;
-}
-
-.card-img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s;
-}
-
-.card:hover .card-img {
-  transform: scale(1.1);
-}
-
-.card-body {
-  padding: 20px;
-}
-
-.card-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--primary);
-}
-
-.card-desc {
-  margin-top: 8px;
-  font-size: 0.875rem;
-  color: var(--muted-fg);
-}
-
-footer {
-  border-top: 1px solid var(--border);
-  padding: 32px 24px;
-  text-align: center;
-  font-size: 0.875rem;
-  color: var(--muted-fg);
-}
-
-
-/* Contenedor Principal Estilo "Cápsula de Villano" */
+/* ─── Registro ─── */
 .contenedorregistro {
-  max-width: 950px;
-  margin: 60px auto;
-  padding: 5rem;
-  height: auto;
-  /* Efecto cristal traslúcido para integrarse con el fondo de la pantalla */
-  background: linear-gradient(135deg, rgba(26, 16, 46, 0.85) 0%, rgba(35, 21, 64, 0.95) 100%);
-  backdrop-filter: blur(10px);
-
-  /* El mismo borde verde neón fino y estilizado de la imagen */
-  border: 1.5px solid #63e24c;
-  border-radius: 18px;
-  /* Bordes suaves como los de la tarjeta de la derecha */
-
-  /* Sutil resplandor púrpura exterior para darle profundidad */
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
-    0 0 30px rgba(155, 81, 224, 0.15);
-
-  font-family: 'Montserrat', 'Segoe UI', sans-serif;
-  color: #ffffff;
-  display: flex;
-  justify-content: space-between;
-}
-
-/* Espaciado del Logo */
-.contenedorregistro img {
-  max-width: 50%;
-  height: auto;
-  margin-bottom: 2.5rem;
-  display: inline-block;
-  border-radius: 25px;
-}
-
-/* Estructura Limpia del Formulario */
-form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 2rem;
   gap: 1.5rem;
-  width: 50%;
-  padding: 25px;
 }
 
-/* Campos de entrada estilizados (Django {{Formulario}}) */
-form input {
+.contenedorregistro img {
+  width: 120px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.contenedorregistro form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   width: 100%;
-  padding: 14px 18px;
-  background: rgba(255, 255, 255, 0.04);
-  /* Fondo ultra limpio y sutil */
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
-  color: #ffffff;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-  box-sizing: border-box;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  height: 50px;
-
+  max-width: 400px;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-form textarea {
-  width: 100%;
-  padding: 14px 18px;
-  background: rgba(255, 255, 255, 0.04);
-  /* Fondo ultra limpio y sutil */
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
-  color: #ffffff;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-  box-sizing: border-box;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  height: 50px;
-}
-
-/* Marcador de posición (Placeholder) en gris elegante */
-input::placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-/* Enfoque del Input: Cambia al morado de la etiqueta de la imagen */
-input:focus {
-  outline: none;
-  background: rgba(155, 81, 224, 0.1);
-  border-color: #9b51e0;
-  /* El púrpura de la etiqueta "VILLANO #1" */
-  box-shadow: 0 0 12px rgba(155, 81, 224, 0.3);
-}
-
-/* Botón de Registro - Inspirado en la etiqueta "VILLANO #1" */
-input[type="submit"] {
-  background: #9b51e0;
-  /* Púrpura corporativo de Mojo */
-  color: #ffffff;
-  padding: 16px;
-  border: none;
-  border-radius: 50px;
-  /* Estilo píldora idéntico al de la imagen */
+.contenedorregistro form input[type="text"],
+.contenedorregistro form input[type="email"],
+.contenedorregistro form input[type="password"],
+.contenedorregistro form input:not([type="submit"]) {
+  padding: 0.85rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  cursor: pointer;
-  margin-top: 1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(155, 81, 224, 0.4);
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-/* Efecto Hover del Botón: Se transforma al Verde Neón de Mojo Jojo */
-input[type="submit"]:hover {
-  background: #63e24c;
-  color: #1a102e;
-  /* Texto oscuro para máxima legibilidad */
-  box-shadow: 0 0 25px rgba(99, 226, 76, 0.6);
-  transform: translateY(-2px);
+.contenedorregistro form input:focus {
+  outline: none;
+  border-color: #0077cc;
+  box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.1);
 }
 
-/* Si Django renderiza etiquetas <label> */
-label {
-  display: block;
-  text-align: left;
-  font-size: 0.85rem;
+.contenedorregistro form input[type="submit"] {
+  padding: 0.9rem;
+  background: #0077cc;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 0.4rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.contenedorregistro form input[type="submit"]:hover {
+  background: #005fa3;
+}
+
+.contenedorregistro form input[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+.mensaje {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #e63946;
+  margin-top: 0.5rem;
+}
+
+
+/* ───────── REGISTRO ───────── */
+
+.contenedorregistro{
+    min-height: 85vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:20px;
+    background: linear-gradient(135deg,#f5f7fa,#e8eef5);
+}
+
+.contenedorregistro img{
+    width:90px;
+    margin-bottom:20px;
+    border-radius:50%;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+/* CONTENEDOR DEL FORMULARIO */
+.contenedorregistro form{
+    width:100%;
+    max-width:350px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.10),
+        0 2px 10px rgba(0,0,0,.05);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+/* LABELS */
+.contenedorregistro label{
+    font-size:14px;
+    font-weight:600;
+    color:#444;
+    margin-bottom:3px;
+}
+
+/* INPUTS */
+.contenedorregistro input[type="text"],
+.contenedorregistro input[type="email"],
+.contenedorregistro input[type="password"],
+.contenedorregistro textarea,
+.contenedorregistro select{
+    width:100%;
+    padding:10px 12px;
+    border:1px solid #d9d9d9;
+    border-radius:10px;
+    font-size:14px;
+    transition:.3s;
+    background:#fafafa;
+}
+
+/* TEXTAREA MÁS CHICA */
+.contenedorregistro textarea{
+    height:60px;
+    resize:vertical;
+}
+
+/* FOCUS */
+.contenedorregistro input:focus,
+.contenedorregistro textarea:focus,
+.contenedorregistro select:focus{
+    outline:none;
+    border-color:#6CABDD;
+    background:white;
+    box-shadow:0 0 0 4px rgba(108,171,221,.15);
+}
+
+/* BOTÓN */
+.contenedorregistro input[type="submit"]{
+    margin-top:10px;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(135deg,#6CABDD,#4A90C6);
+    color:white;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+    font-size:15px;
+}
+
+.contenedorregistro input[type="submit"]:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(74,144,198,.35);
+}
+
+/* MENSAJE */
+.mensaje{
+    text-align:center;
+    color:#dc3545;
+    font-size:14px;
+    margin-top:5px;
+}
+
+/* CAMPOS DJANGO */
+.contenedorregistro form p{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    margin:0;
 }
