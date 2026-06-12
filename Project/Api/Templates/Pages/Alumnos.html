@@ -7,6 +7,10 @@
     {% for i in VerAlumnos %}
     <div class="cardJugador">
 
+        {% if i.Imagen %}
+            <img src="{{ i.Imagen.url }}" alt="Jugador">
+        {% endif %}
+
         <img src="{% static 'img/jugador.png' %}" alt="Jugador">
 
         <h3>{{i.Apellido}}</h3>

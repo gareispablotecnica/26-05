@@ -9,6 +9,7 @@ class Alumnos(models.Model):
     Edad=models.IntegerField()
     Calle=models.TextField(max_length=50)
     Altura=models.IntegerField()
+    Imagen=models.ImageField(upload_to='Productos/',null=True)
 
     def __str__(self):
         return self.DNI
