@@ -23,7 +23,7 @@ def Registro(request):
             data['Mensaje']="No se pudo Registrar"
     return render(request,'Pages/Registro.html',data)
 
-def VerAlumnos(request):
+def VerProductos(request):
     query=Alumnos.objects.all()
     data={
         'VerAlumnos':query

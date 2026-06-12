@@ -5,5 +5,5 @@ urlpatterns = [
     # ---> Pagina, Funcion , Hipervinculo
     path('',Home,name="Inicio"),
     path('registro/',Registro,name="Registro"),
-    path('alumnos/',VerAlumnos,name="Alumnos"),
+    path('productos/',VerProductos,name="Productos"),
 ]
