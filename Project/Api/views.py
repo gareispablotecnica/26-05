@@ -22,3 +22,10 @@ def Registro(request):
         else:
             data['Mensaje']="No se pudo Registrar"
     return render(request,'Pages/Registro.html',data)
+
+def VerAlumnos(request):
+    query=Alumnos.objects.all()
+    data={
+        'VerAlumnos':query
+    }
+    return render(request,'Pages/Alumnos.html',data)

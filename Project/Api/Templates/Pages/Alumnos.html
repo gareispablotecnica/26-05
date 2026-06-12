@@ -1,0 +1,22 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block Altamiran %}
+
+<div class="contenedorAlumnos">
+    {% for i in VerAlumnos %}
+    <div class="cardJugador">
+
+        <img src="{% static 'img/jugador.png' %}" alt="Jugador">
+
+        <h3>{{i.Apellido}}</h3>
+
+        <p class="numero">{{i.DNI}}</p>
+
+        <span>{{i.Nombre}}</span>
+
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

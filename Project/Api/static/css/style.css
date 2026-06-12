@@ -540,3 +540,61 @@ footer {
     gap:5px;
     margin:0;
 }
+
+
+
+/* Tarjetas */
+
+.contenedorAlumnos{
+    width: 95%;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+    gap: 20px;
+}
+
+/* Tarjeta */
+.cardJugador{
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+    transition: .3s;
+    border-top: 5px solid #6CABDD;
+}
+
+.cardJugador:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+.cardJugador img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #6CABDD;
+    margin-bottom: 10px;
+}
+
+.cardJugador h3{
+    color: #022859;
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+.numero{
+    background: #6CABDD;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+.cardJugador span{
+    color: #666;
+    font-size: .9rem;
+}
