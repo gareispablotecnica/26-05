@@ -1,0 +1,15 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block Altamiran %}
+
+<div class="contenedorregistro">
+    <img src="{% static 'src/A.png' %}" alt="">
+    <form action="" method="post" enctype="multipart/form-data">
+        {{Formulario}}
+        {% csrf_token %}
+        <input type="submit" value="Modificar">
+        <p class="mensaje">{{Mensaje}}</p>
+    </form>
+</div>
+{% endblock %}

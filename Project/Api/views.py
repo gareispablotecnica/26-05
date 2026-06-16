@@ -45,5 +45,5 @@ def Modificacion(request,ID_Alumno):
             query.save()
             data["Mensaje"]="Datos Modificados"
         else:
-            data['Mensaje']="No se pudo Registrar"
+            data['Mensaje']="No se pudo Modificar"
     return render(request,'Pages/Registro.html',data)
