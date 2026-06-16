@@ -5,7 +5,7 @@
 
 <div class="contenedorregistro">
     <img src="{% static 'src/A.png' %}" alt="">
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         {{Formulario}}
         {% csrf_token %}
         <input type="submit" value="Registrar">
